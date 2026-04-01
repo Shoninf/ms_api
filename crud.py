@@ -27,7 +27,7 @@ def get_owner_with_most_wings(db: Session):
     return None
 
 def get_wings_by_owner_with_details(db: Session, owner_id: int):
-    """Получить экспонаты владельца с детальной информацией о владельце и типе"""
+    """RПолучить экспонаты владельца с детальной информацией о владельце и типе"""
     return (db.query(models.Wing)
             .options(
                 joinedload(models.Wing.owner),

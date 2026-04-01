@@ -215,6 +215,15 @@ def get_places_spb_above_avg_scale(db: Session):
         WHERE (location = 'Санкт-Петербург' OR location = 'СПб')
           AND scale > (SELECT AVG(scale) FROM places);
     """
+
+
+
+
+
+
+
+
+    
     # Подзапрос для среднего масштаба
     avg_scale = db.query(func.avg(models.Place.scale)).scalar_subquery()
     return (db.query(models.Place)

@@ -151,10 +151,21 @@ def read_type(type_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Тип экспоната не найден")
     return create_response_with_sql(wing_type)
 
+
+
+
+
+
+
+
+
+
+
+
 # ==================== АНАЛИТИКА (ANALYTICS) ====================
 @router.get("/analytics/owner-most-wings", tags=["📊 Аналитика"])
 def get_owner_with_most_wings(db: Session = Depends(get_db)):
-    """Владелец с наибольшим количеством экспонатов"""
+    """владелец с наибольшим количеством экспонатов"""
     result = crud.get_owner_with_most_wings(db)
     return create_response_with_sql(result)
 
